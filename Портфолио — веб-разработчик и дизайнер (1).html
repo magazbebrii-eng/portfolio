@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Портфолио — веб-разработчик и дизайнер</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config={theme:{extend:{
+  colors:{bg:'var(--bg)',surface:'var(--surface)',ink:'var(--ink)',mute:'var(--muted)',line:'var(--line)',accent:'var(--accent)'},
+  fontFamily:{sans:['Inter','system-ui','-apple-system','"SF Pro Text"','"Segoe UI"','sans-serif']}
+}}};
+</script>
+<style>
+:root{
+  --bg:#ffffff;--surface:#fafafa;--ink:#171717;--muted:#666666;--line:#eaeaea;--accent:#0071e3;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0a0a0a;--surface:#111111;--ink:#ededed;--muted:#a1a1a1;--line:#262626;--accent:#3b9eff;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0a0a0a;--surface:#111111;--ink:#ededed;--muted:#a1a1a1;--line:#262626;--accent:#3b9eff;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 80%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.f{animation:fade .6s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){.f{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="bg-bg font-sans text-[16px] leading-6 text-ink antialiased">
+
+<header class="hdr border-b border-line">
+  <div class="mx-auto flex h-16 w-full max-w-[960px] items-center justify-between px-6 sm:px-8">
+    <a href="#top" class="text-[16px] font-semibold tracking-tight">Портфолио</a>
+    <nav class="flex items-center gap-4 text-[14px] sm:gap-6" aria-label="Разделы">
+      <a href="#work" class="text-mute transition-colors hover:text-ink">Работы</a>
+      <a href="#about" class="hidden text-mute transition-colors hover:text-ink sm:inline">Обо мне</a>
+      <a href="#contact" class="text-mute transition-colors hover:text-ink">Контакты</a>
+      <button id="theme" type="button" aria-label="Сменить тему" class="h-8 w-8 rounded-lg border border-line text-mute transition-colors hover:border-mute hover:text-ink">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="mx-auto w-full max-w-[960px] px-6 sm:px-8">
+
+  <section class="pb-24 pt-24 md:pb-32 md:pt-32">
+    <div class="f inline-flex h-8 items-center gap-2 rounded-full border border-line px-4 text-[14px] text-mute">
+      <span class="h-2 w-2 rounded-full bg-accent"></span>Открыта для новых проектов
+    </div>
+    <h1 class="f mt-8 max-w-[768px] text-[40px] font-semibold leading-[48px] tracking-[-0.04em] md:text-[64px] md:leading-[72px]" style="animation-delay:.1s">Веб-разработчик и дизайнер интерфейсов</h1>
+    <p class="f mt-6 max-w-[560px] text-[18px] leading-8 text-mute" style="animation-delay:.2s">Проектирую и собираю сайты и приложения для небольших компаний и стартапов: просто, быстро и без лишнего.</p>
+    <div class="f mt-10 flex flex-wrap gap-4" style="animation-delay:.3s">
+      <a href="#work" class="inline-flex h-10 items-center rounded-lg bg-ink px-4 text-[14px] font-medium text-bg transition-opacity hover:opacity-80">Смотреть работы</a>
+      <a href="#contact" class="inline-flex h-10 items-center rounded-lg border border-line px-4 text-[14px] font-medium transition-colors hover:border-mute">Написать мне</a>
+    </div>
+  </section>
+
+  <section id="work" class="border-t border-line py-24 md:py-32">
+    <h2 class="mb-12 text-[32px] font-semibold leading-10 tracking-tight">Избранные работы</h2>
+    <div class="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
+
+      <a href="#contact" class="group block">
+        <div class="grid h-48 grid-cols-3 gap-2 rounded-2xl border border-line bg-surface p-6 transition-colors group-hover:border-mute">
+          <div class="flex items-end rounded-lg border border-line bg-bg p-2"><span class="h-2 w-8 rounded-full bg-accent"></span></div>
+          <div class="flex items-end rounded-lg border border-line bg-bg p-2"><span class="h-2 w-8 rounded-full bg-line"></span></div>
+          <div class="flex items-end rounded-lg border border-line bg-bg p-2"><span class="h-2 w-8 rounded-full bg-line"></span></div>
+        </div>
+        <h3 class="mt-6 text-[18px] font-medium leading-6">Лавка — магазин керамики</h3>
+        <p class="mt-2 text-[14px] leading-6 text-mute">Редизайн каталога и оформления заказа. Доля завершённых покупок выросла на 28%.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[12px] leading-4 text-mute">
+          <span class="inline-flex h-6 items-center rounded-full border border-line px-2">Дизайн</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">React</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">Stripe</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="group block">
+        <div class="flex h-48 items-center justify-between rounded-2xl border border-line bg-surface p-6 transition-colors group-hover:border-mute">
+          <span class="h-8 w-8 rounded-full border border-ink bg-ink"></span><span class="h-8 w-8 rounded-full border border-ink bg-ink"></span><span class="h-8 w-8 rounded-full border border-ink bg-ink"></span><span class="h-8 w-8 rounded-full border border-ink bg-ink"></span><span class="h-8 w-8 rounded-full border border-accent bg-accent"></span><span class="h-8 w-8 rounded-full border border-line"></span><span class="h-8 w-8 rounded-full border border-line"></span>
+        </div>
+        <h3 class="mt-6 text-[18px] font-medium leading-6">Круг — трекер привычек</h3>
+        <p class="mt-2 text-[14px] leading-6 text-mute">Мобильное веб-приложение с напоминаниями и недельной статистикой.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[12px] leading-4 text-mute">
+          <span class="inline-flex h-6 items-center rounded-full border border-line px-2">Продуктовый дизайн</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">TypeScript</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">PWA</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="group block">
+        <div class="flex h-48 items-end gap-2 rounded-2xl border border-line bg-surface p-6 transition-colors group-hover:border-mute">
+          <span class="flex-1 rounded-t-lg bg-line" style="height:32%"></span><span class="flex-1 rounded-t-lg bg-line" style="height:48%"></span><span class="flex-1 rounded-t-lg bg-line" style="height:40%"></span><span class="flex-1 rounded-t-lg bg-line" style="height:64%"></span><span class="flex-1 rounded-t-lg bg-line" style="height:56%"></span><span class="flex-1 rounded-t-lg bg-line" style="height:72%"></span><span class="flex-1 rounded-t-lg bg-accent" style="height:100%"></span>
+        </div>
+        <h3 class="mt-6 text-[18px] font-medium leading-6">Метрика — аналитика для кофеен</h3>
+        <p class="mt-2 text-[14px] leading-6 text-mute">Дашборд с продажами по часам и точкам вместо еженедельных отчётов.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[12px] leading-4 text-mute">
+          <span class="inline-flex h-6 items-center rounded-full border border-line px-2">Дашборды</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">Vue</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">D3</span>
+        </div>
+      </a>
+
+      <a href="#contact" class="group block">
+        <div class="flex h-48 flex-col justify-center gap-4 rounded-2xl border border-line bg-surface p-6 transition-colors group-hover:border-mute">
+          <span class="h-4 w-3/4 rounded-full bg-ink"></span>
+          <span class="h-2 w-full rounded-full bg-line"></span>
+          <span class="h-2 w-2/3 rounded-full bg-line"></span>
+          <span class="mt-2 h-8 w-24 rounded-lg bg-accent"></span>
+        </div>
+        <h3 class="mt-6 text-[18px] font-medium leading-6">Студия «Рама» — сайт бюро</h3>
+        <p class="mt-2 text-[14px] leading-6 text-mute">Лендинг с проектами и формой заявки. Загружается быстрее секунды.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-[12px] leading-4 text-mute">
+          <span class="inline-flex h-6 items-center rounded-full border border-line px-2">Вёрстка</span><span class="inline-flex h-6 items-center rounded-full border border-line px-2">SEO</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="about" class="grid grid-cols-1 gap-12 border-t border-line py-24 md:grid-cols-2 md:gap-16 md:py-32">
+    <div>
+      <h2 class="text-[32px] font-semibold leading-10 tracking-tight">Обо мне</h2>
+      <p class="mt-6 max-w-[480px] text-mute">Шесть лет делаю сайты: начинала с вёрстки, потом пришла в дизайн и продукт. Мне важно, чтобы страница была понятной с первого экрана и не тормозила на обычном телефоне.</p>
+      <p class="mt-4 max-w-[480px] text-mute">Работаю напрямую с заказчиком: обсуждаем задачу, согласуем макет, запускаем сайт и остаюсь на связи после релиза.</p>
+    </div>
+    <dl class="self-start text-[14px] leading-6">
+      <div class="flex justify-between gap-6 border-t border-line py-4"><dt class="font-medium">Дизайн</dt><dd class="text-right text-mute">Figma, прототипы, дизайн-системы</dd></div>
+      <div class="flex justify-between gap-6 border-t border-line py-4"><dt class="font-medium">Фронтенд</dt><dd class="text-right text-mute">HTML, CSS, JavaScript, React</dd></div>
+      <div class="flex justify-between gap-6 border-t border-line py-4"><dt class="font-medium">Бэкенд</dt><dd class="text-right text-mute">Node.js, PostgreSQL</dd></div>
+      <div class="flex justify-between gap-6 border-y border-line py-4"><dt class="font-medium">Качество</dt><dd class="text-right text-mute">Доступность, скорость, SEO</dd></div>
+    </dl>
+  </section>
+
+  <section id="contact" class="border-t border-line py-24 md:py-32">
+    <h2 class="text-[32px] font-semibold leading-10 tracking-tight">Давайте обсудим ваш проект</h2>
+    <p class="mt-6 max-w-[480px] text-mute">Расскажите, что нужно сделать и к какому сроку. Отвечаю в течение дня.</p>
+    <a href="mailto:hello@example.com" class="mt-8 inline-block break-all text-[32px] font-semibold leading-10 tracking-tight underline decoration-line underline-offset-8 transition-colors hover:decoration-ink md:text-[56px] md:leading-[64px]">hello@example.com</a>
+    <div class="mt-8 flex flex-wrap gap-6 text-[14px] text-mute">
+      <a href="#contact" class="transition-colors hover:text-ink">Telegram</a>
+      <a href="#contact" class="transition-colors hover:text-ink">GitHub</a>
+      <a href="#contact" class="transition-colors hover:text-ink">Behance</a>
+      <a href="#contact" class="transition-colors hover:text-ink">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t border-line">
+  <div class="mx-auto w-full max-w-[960px] px-6 py-8 text-[14px] leading-6 text-mute sm:px-8">© 2026 Портфолио</div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,t=document.getElementById('theme');
+  function isDark(){var a=root.getAttribute('data-theme');return a?a==='dark':matchMedia('(prefers-color-scheme: dark)').matches}
+  if(t)t.addEventListener('click',function(){root.setAttribute('data-theme',isDark()?'light':'dark')});
+})();
+</script>
+</body>
+</html>
